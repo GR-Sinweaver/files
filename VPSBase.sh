@@ -6,7 +6,7 @@ echo
 echo "#############################"
 echo "aaPanel"
 echo "#############################"
-wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
+wget -O install.sh https://raw.githubusercontent.com/GRTWOSTEP/files/main/install.sh && sudo bash install.sh aapanel
 read -p "Press any key to continue ..."
 echo "#############################"
 echo "xRDP"

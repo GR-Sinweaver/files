@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 LANG=en_US.UTF-8
 panelPort="7800"
-
+mkdir -p home/twostep/aaPanel
 if [ $(whoami) != "root" ]; then
     echo "Please use the [root] user to execute the aapanel installation script!"
     exit 1
@@ -66,15 +66,6 @@ Lock_Clear() {
         rm -f /etc/bt_crack.pl
     fi
 }
-Install_Check() {
-    if [ "${INSTALL_FORCE}" ]; then
-        return
-    fi
-    echo -e "----------------------------------------------------"
-    echo -e "Web service is alreday installed,installing aaPanel may affect existing sites."
-    echo -e "----------------------------------------------------"
-    INSTALL_FORCE="true"
-}
 System_Check() {
     MYSQLD_CHECK=$(ps -ef | grep mysqld | grep -v grep | grep -v /www/server/mysql)
     PHP_CHECK=$(ps -ef | grep php-fpm | grep master | grep -v /www/server/php)
@@ -83,9 +74,6 @@ System_Check() {
     if [ "${PHP_CHECK}" ] || [ "${MYSQLD_CHECK}" ] || [ "${NGINX_CHECK}" ] || [ "${HTTPD_CHECK}" ]; then
         Install_Check
     fi
-}
-Set_Ssl() {
-    SET_SSL=false
 }
 Get_Pack_Manager() {
     if [ -f "/usr/bin/yum" ] && [ -d "/etc/yum.repos.d" ]; then
@@ -881,32 +869,31 @@ fi
 
 Install_Main
 intenal_ip=$(ip addr | grep -E -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -E -v "^127\.|^255\.|^0\." | head -n 1)
-mkdir -p home/twostep/aaPanel
 echo -e "=================================================================="
-echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
+echo -e "==================================================================" >> home/twostep/aaPanel/Config.txt
 echo -e "\033[32mCongratulations! Installed successfully!\033[0m"
-echo -e "\033[32mCongratulations! Installed successfully!\033[0m" > home/twostep/aaPanel/Config.txt
+echo -e "\033[32mCongratulations! Installed successfully!\033[0m" >> home/twostep/aaPanel/Config.txt
 echo -e "=================================================================="
-echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
+echo -e "==================================================================" >> home/twostep/aaPanel/Config.txt
 echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path"
-echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
+echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" >> home/twostep/aaPanel/Config.txt
 echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path"
-echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
+echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" >> home/twostep/aaPanel/Config.txt
 echo -e "username: $username"
-echo -e "username: $username" > home/twostep/aaPanel/Config.txt
+echo -e "username: $username" >> home/twostep/aaPanel/Config.txt
 echo -e "password: $password"
-echo -e "password: $password" > home/twostep/aaPanel/Config.txt
+echo -e "password: $password" >> home/twostep/aaPanel/Config.txt
 echo -e "\033[33mWarning:\033[0m"
-echo -e "\033[33mWarning:\033[0m" > home/twostep/aaPanel/Config.txt
+echo -e "\033[33mWarning:\033[0m" >> home/twostep/aaPanel/Config.txt
 echo -e "\033[33mIf you cannot access the panel, \033[0m"
 echo -e "\033[33mIf you cannot access the panel, \033[0m" > home/twostep/aaPanel/Config.txt
 echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m"
-echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m" > home/twostep/aaPanel/Config.txt
+echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m" >> home/twostep/aaPanel/Config.txt
 echo -e "=================================================================="
-echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
+echo -e "==================================================================" >> home/twostep/aaPanel/Config.txt
 
 endTime=$(date +%s)
 ((outTime = ($endTime - $startTime) / 60))
 echo -e "Time consumed:\033[32m $outTime \033[0mMinute!"
-echo -e "Time consumed:\033[32m $outTime \033[0mMinute!" > home/twostep/aaPanel/Config.txt
+echo -e "Time consumed:\033[32m $outTime \033[0mMinute!" >> home/twostep/aaPanel/Config.txt
 rm -f install-ubuntu_6.0_en.sh

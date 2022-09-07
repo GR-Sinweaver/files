@@ -2,7 +2,7 @@
 clear
 echo 
 echo "#################### VPS Base ############################"
-echo 
+sudo apt -y remove needrestart
 echo "#############################"
 echo "aaPanel"
 echo "#############################"

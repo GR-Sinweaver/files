@@ -910,7 +910,7 @@ fi
 
 Install_Main
 intenal_ip=$(ip addr | grep -E -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -E -v "^127\.|^255\.|^0\." | head -n 1)
-mkdir -p ~/aaPanel
+mkdir -p home/twostep/aaPanel
 echo -e "=================================================================="
 echo -e "==================================================================" > ~/aaPanel/Config.txt
 echo -e "\033[32mCongratulations! Installed successfully!\033[0m"
@@ -919,27 +919,27 @@ echo -e "=================================================================="
 echo -e "==================================================================" > ~/aaPanel/Config.txt
 if [ "$SET_SSL" == true ]; then
     echo "aaPanel Internet Address: https://${getIpAddress}:${panelPort}$auth_path"
-	echo "aaPanel Internet Address: https://${getIpAddress}:${panelPort}$auth_path" > ~/aaPanel/Config.txt
+	echo "aaPanel Internet Address: https://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
     echo "aaPanel Internal Address: https://${intenal_ip}:${panelPort}$auth_path"
-	echo "aaPanel Internal Address: https://${intenal_ip}:${panelPort}$auth_path" > ~/aaPanel/Config.txt
+	echo "aaPanel Internal Address: https://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
 else
     echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path"
-	echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" > ~/aaPanel/Config.txt
+	echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
     echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path"
-	echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" > ~/aaPanel/Config.txt
+	echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
 fi
 echo -e "username: $username"
-echo -e "username: $username" > ~/aaPanel/Config.txt
+echo -e "username: $username" > home/twostep/aaPanel/Config.txt
 echo -e "password: $password"
-echo -e "password: $password" > ~/aaPanel/Config.txt
+echo -e "password: $password" > home/twostep/aaPanel/Config.txt
 echo -e "\033[33mWarning:\033[0m"
-echo -e "\033[33mWarning:\033[0m" > ~/aaPanel/Config.txt
+echo -e "\033[33mWarning:\033[0m" > home/twostep/aaPanel/Config.txt
 echo -e "\033[33mIf you cannot access the panel, \033[0m"
-echo -e "\033[33mIf you cannot access the panel, \033[0m" > ~/aaPanel/Config.txt
+echo -e "\033[33mIf you cannot access the panel, \033[0m" > home/twostep/aaPanel/Config.txt
 echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m"
-echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m" > ~/aaPanel/Config.txt
+echo -e "\033[33mrelease the following port ($panelPort|888|80|443|20|21) in the security group\033[0m" > home/twostep/aaPanel/Config.txt
 echo -e "=================================================================="
-echo -e "==================================================================" > ~/aaPanel/Config.txt
+echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
 
 endTime=$(date +%s)
 ((outTime = ($endTime - $startTime) / 60))

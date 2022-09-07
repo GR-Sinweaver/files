@@ -3,8 +3,6 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 LANG=en_US.UTF-8
 panelPort="7800"
-mkdir -p home/twostep/aaPanel
-cat > home/twostep/aaPanel/Config.txt
 
 if [ $(whoami) != "root" ]; then
     echo "Please use the [root] user to execute the aapanel installation script!"

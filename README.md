@@ -1,5 +1,5 @@
-# files
-1. Create user
+
+# 1. Create user
 ```
 (VNC Logging)
 (Change root passwd)
@@ -9,20 +9,20 @@ usermod -aG sudo
 usermod -aG root  
 passwd 
 ```
-2. aaPanel
+# 2. aaPanel
 ```
 wget https://raw.githubusercontent.com/GRTWOSTEP/files/main/VPSBase.sh
 chmod +x VPSBase.sh
 ./VPSBase.sh
-
-___________________________
-
-
-wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
+```
+# 3. Verify IDs
+```
+sudo nano ~/aaPanel/Config.txt
+```
+Deprecated.......
+```
+wget -O install.sh https://raw.githubusercontent.com/GRTWOSTEP/files/main/install.sh && sudo bash install.sh aapanel
 sudo reboot
-```
-3. xRDP
-```
 apt-get install zip
 apt-get install ubuntu-gnome-desktop
 wget https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.3.zip

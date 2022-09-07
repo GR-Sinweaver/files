@@ -85,9 +85,7 @@ System_Check() {
     fi
 }
 Set_Ssl() {
-                SET_SSL=false
-        esac
-    fi
+    SET_SSL=false
 }
 Get_Pack_Manager() {
     if [ -f "/usr/bin/yum" ] && [ -d "/etc/yum.repos.d" ]; then

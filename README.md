@@ -1,9 +1,15 @@
 # files
-1. aaPanel
+1. Create user
+```
+adduser 
+usermod -aG sudo 
+usermod -aG root  
+```
+2. aaPanel
 ```
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
 ```
-2. xRDP
+3. xRDP
 ```
 apt-get install zip
 apt-get install ubuntu-gnome-desktop

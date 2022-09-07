@@ -14,10 +14,12 @@ passwd
 wget https://raw.githubusercontent.com/GRTWOSTEP/files/main/VPSBase.sh
 chmod +x VPSBase.sh
 ./VPSBase.sh
-
+```
+3. Verify IDs
+```
 sudo nano ~/aaPanel/Config.txt
 ```
-3. Deprecated.......
+Deprecated.......
 ```
 wget -O install.sh https://raw.githubusercontent.com/GRTWOSTEP/files/main/install.sh && sudo bash install.sh aapanel
 sudo reboot

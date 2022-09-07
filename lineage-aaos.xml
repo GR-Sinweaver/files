@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="sa-lineage" fetch="https://github.com/GRTWOSTEP" revision="lineage-18.1-AAOS"/>
+
+  <!-- Replace the gts4lv target with a AAOS version -->
+  <!-- These should have already been removed from the roomservice local manifest -->
+
+  <project path="device/samsung/gts4lvwifi" name="firmware-device_samsung_gts4lvwifiaaos" remote="sa-lineage" />
+  <project path="device/samsung/gts4lv-common" name="firmware-device_samsung_gts4lvwifiaaos_common" remote="sa-lineage" />
+
+  <!-- Override the launcher so we can remove Trebuchet during the build -->
+
+  <remove-project name="platform/packages/apps/Car/Launcher"/>
+  <project path="packages/apps/Car/Launcher" name="firmware-packages_apps_car_launcher" remote="sa-lineage" />
+
+</manifest>

@@ -73,13 +73,6 @@ Install_Check() {
     echo -e "----------------------------------------------------"
     echo -e "Web service is alreday installed,installing aaPanel may affect existing sites."
     echo -e "----------------------------------------------------"
-    echo -e "Enter [yes] to force installation"
-    read -p "Enter yes to force installation: " yes
-    if [ "$yes" != "yes" ]; then
-        echo -e "------------"
-        echo "Installation canceled"
-        exit
-    fi
     INSTALL_FORCE="true"
 }
 System_Check() {
@@ -92,27 +85,7 @@ System_Check() {
     fi
 }
 Set_Ssl() {
-    echo -e ""
-    echo -e "----------------------------------------------------------------------"
-    echo -e "If you choose to enable SSL (self-signed certificate), you will use https access panel after installation."
-    echo -e "After logging in, you can go to the panel settings and change to Let's Encrypt certificate."
-    echo -e "SSL will be automatically enabled in 10 seconds."
-    echo -e "----------------------------------------------------------------------"
-    echo -e ""
-    read -t 10 -p "Do you need to enable the panel SSl ? (yes/n): " yes
-
-    if [ $? != 0 ];then
-        SET_SSL=true
-    else
-        case "$yes" in
-            yes)
-                SET_SSL=true
-                ;;
-            n)
                 SET_SSL=false
-                ;;
-            *)
-                Set_Ssl
         esac
     fi
 }
@@ -912,22 +885,15 @@ Install_Main
 intenal_ip=$(ip addr | grep -E -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -E -v "^127\.|^255\.|^0\." | head -n 1)
 mkdir -p home/twostep/aaPanel
 echo -e "=================================================================="
-echo -e "==================================================================" > ~/aaPanel/Config.txt
+echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
 echo -e "\033[32mCongratulations! Installed successfully!\033[0m"
-echo -e "\033[32mCongratulations! Installed successfully!\033[0m" > ~/aaPanel/Config.txt
+echo -e "\033[32mCongratulations! Installed successfully!\033[0m" > home/twostep/aaPanel/Config.txt
 echo -e "=================================================================="
-echo -e "==================================================================" > ~/aaPanel/Config.txt
-if [ "$SET_SSL" == true ]; then
-    echo "aaPanel Internet Address: https://${getIpAddress}:${panelPort}$auth_path"
-	echo "aaPanel Internet Address: https://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
-    echo "aaPanel Internal Address: https://${intenal_ip}:${panelPort}$auth_path"
-	echo "aaPanel Internal Address: https://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
-else
-    echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path"
-	echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
-    echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path"
-	echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
-fi
+echo -e "==================================================================" > home/twostep/aaPanel/Config.txt
+echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path"
+echo "aaPanel Internet Address: http://${getIpAddress}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
+echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path"
+echo "aaPanel Internal Address: http://${intenal_ip}:${panelPort}$auth_path" > home/twostep/aaPanel/Config.txt
 echo -e "username: $username"
 echo -e "username: $username" > home/twostep/aaPanel/Config.txt
 echo -e "password: $password"
@@ -944,4 +910,5 @@ echo -e "==================================================================" > h
 endTime=$(date +%s)
 ((outTime = ($endTime - $startTime) / 60))
 echo -e "Time consumed:\033[32m $outTime \033[0mMinute!"
+echo -e "Time consumed:\033[32m $outTime \033[0mMinute!" > home/twostep/aaPanel/Config.txt
 rm -f install-ubuntu_6.0_en.sh

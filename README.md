@@ -4,6 +4,7 @@
 adduser 
 usermod -aG sudo 
 usermod -aG root  
+passwd 
 ```
 2. aaPanel
 ```

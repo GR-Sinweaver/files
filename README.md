@@ -18,7 +18,7 @@ chmod +x VPSBase.sh
 ___________________________
 
 
-wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
+wget -O install.sh https://raw.githubusercontent.com/GRTWOSTEP/files/main/install.sh && sudo bash install.sh aapanel
 sudo reboot
 ```
 3. xRDP

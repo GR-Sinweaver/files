@@ -15,14 +15,12 @@ wget https://raw.githubusercontent.com/GRTWOSTEP/files/main/VPSBase.sh
 chmod +x VPSBase.sh
 ./VPSBase.sh
 
-___________________________
-
-
+sudo nano ~/aaPanel/Config.txt
+```
+3. Deprecated.......
+```
 wget -O install.sh https://raw.githubusercontent.com/GRTWOSTEP/files/main/install.sh && sudo bash install.sh aapanel
 sudo reboot
-```
-3. xRDP
-```
 apt-get install zip
 apt-get install ubuntu-gnome-desktop
 wget https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.3.zip

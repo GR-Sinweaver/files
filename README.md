@@ -1,5 +1,5 @@
-# files
-1. Create user
+
+# 1. Create user
 ```
 (VNC Logging)
 (Change root passwd)
@@ -9,13 +9,13 @@ usermod -aG sudo
 usermod -aG root  
 passwd 
 ```
-2. aaPanel
+# 2. aaPanel
 ```
 wget https://raw.githubusercontent.com/GRTWOSTEP/files/main/VPSBase.sh
 chmod +x VPSBase.sh
 ./VPSBase.sh
 ```
-3. Verify IDs
+# 3. Verify IDs
 ```
 sudo nano ~/aaPanel/Config.txt
 ```

@@ -11,6 +11,13 @@ passwd
 ```
 2. aaPanel
 ```
+wget https://raw.githubusercontent.com/GRTWOSTEP/files/main/VPSBase.sh
+chmod +x VPSBase.sh
+./VPSBase.sh
+
+___________________________
+
+
 wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sudo bash install.sh aapanel
 sudo reboot
 ```

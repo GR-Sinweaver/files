@@ -1,6 +1,9 @@
 # files
 1. Create user
 ```
+(VNC Logging)
+(Change root passwd)
+(Login SSH with root user)
 adduser 
 usermod -aG sudo 
 usermod -aG root  
